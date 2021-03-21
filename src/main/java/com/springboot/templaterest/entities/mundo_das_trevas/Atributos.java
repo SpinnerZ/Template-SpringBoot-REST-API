@@ -6,7 +6,6 @@ import com.springboot.templaterest.entities.mundo_das_trevas.atributos.Sociais;
 import lombok.Getter;
 import lombok.Setter;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
@@ -56,19 +55,19 @@ public class Atributos {
         return primarios;
     }
 
-    //TO-DO: Melhorar isso aqui. O algoritmo pode entrar em loop infinito se todos os valores forem maiores que 4, e
-    //acredito que pode ser otimizado também.
     public static int[] atributosIniciaisAleatorios(int pontos, Random aleatorio) {
         int[] atributos = {1, 1, 1};
+        boolean[] atributosFlag = {false, false, false};
 
-        for (; pontos > 0; pontos--) {
-            int posicao = aleatorio.nextInt(3);
+        for (; pontos > 0 && !(atributosFlag[0] && atributosFlag[1] && atributosFlag[2]); pontos--) {
+            int posicao = aleatorio.nextInt(atributos.length);
 
             if (atributos[posicao] >= 4) {
                 if (pontos >= 2) {
                     pontos--;
                 } else {
                     pontos++;
+                    atributosFlag[posicao] = true;
                     continue;
                 }
             }
