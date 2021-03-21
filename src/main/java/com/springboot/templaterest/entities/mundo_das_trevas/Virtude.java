@@ -14,13 +14,12 @@ public enum Virtude {
     TEMPERANCA("Temperança");
 
     @Getter private String nome;
-    private static final Random ALETORIO = new Random();
 
     Virtude(String nome) {
         this.nome = nome;
     }
 
-    public static Virtude virtudeAleatoria() {
-        return values()[ALETORIO.nextInt(values().length)];
+    public static Virtude virtudeAleatoria(Random aleatorio) {
+        return values()[aleatorio.nextInt(values().length)];
     }
 }

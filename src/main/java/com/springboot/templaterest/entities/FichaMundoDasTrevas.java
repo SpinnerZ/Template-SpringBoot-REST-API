@@ -6,7 +6,10 @@ import com.springboot.templaterest.entities.mundo_das_trevas.Virtude;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.util.Random;
+
 public class FichaMundoDasTrevas {
+
     @Getter @Setter private String nome;
     @Getter @Setter private Integer idade;
     @Getter @Setter private String jogador;
@@ -19,9 +22,9 @@ public class FichaMundoDasTrevas {
 
     @Getter @Setter private Atributos atributos;
 
-    public FichaMundoDasTrevas() {
-        virtude = Virtude.virtudeAleatoria().getNome();
-        vicio = Vicio.vicioAleatorio().getNome();
-        atributos = new Atributos();
+    public FichaMundoDasTrevas(Random aleatorio) {
+        virtude = Virtude.virtudeAleatoria(aleatorio).getNome();
+        vicio = Vicio.vicioAleatorio(aleatorio).getNome();
+        atributos = new Atributos(aleatorio);
     }
 }

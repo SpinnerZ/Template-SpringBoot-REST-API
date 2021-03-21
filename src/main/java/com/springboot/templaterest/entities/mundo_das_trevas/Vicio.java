@@ -14,13 +14,12 @@ public enum Vicio {
     PREGUICA("Preguiça");
 
     @Getter private String nome;
-    private static final Random ALETORIO = new Random();
 
     Vicio(String nome) {
         this.nome = nome;
     }
 
-    public static Vicio vicioAleatorio() {
-        return values()[ALETORIO.nextInt(values().length)];
+    public static Vicio vicioAleatorio(Random aleatorio) {
+        return values()[aleatorio.nextInt(values().length)];
     }
 }

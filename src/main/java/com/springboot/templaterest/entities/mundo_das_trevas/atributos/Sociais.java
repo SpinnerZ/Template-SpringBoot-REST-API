@@ -1,8 +1,10 @@
 package com.springboot.templaterest.entities.mundo_das_trevas.atributos;
 
-import com.springboot.templaterest.entities.mundo_das_trevas.util.GeradorAleatorio;
+import com.springboot.templaterest.entities.mundo_das_trevas.Atributos;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.Random;
 
 public class Sociais {
     @Getter @Setter private int presenca;
@@ -19,7 +21,7 @@ public class Sociais {
         this(valores[0], valores[1], valores[2]);
     }
 
-    public Sociais(int pontos) {
-        this(GeradorAleatorio.atributosIniciaisAleatorios(pontos));
+    public Sociais(int pontos, Random aleatorio) {
+        this(Atributos.atributosIniciaisAleatorios(pontos, aleatorio));
     }
 }
