@@ -8,11 +8,11 @@
 		<version>2.4.3</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.SpringBootTemplateREST</groupId>
-	<artifactId>SpringBootTemplateREST</artifactId>
+	<groupId>com.gerador-de-fichas-de-rpg</groupId>
+	<artifactId>GeradorDeFichasDeRPG</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringBootTemplateREST</name>
-	<description>Start project SpringBoot Template REST</description>
+	<name>Gerador de Fichas de RPG</name>
+	<description>API REST que gera fichas de RPG aleatórias</description>
 	<properties>
 		<java.version>11</java.version>
 	</properties>
